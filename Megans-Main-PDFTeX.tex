@@ -1,0 +1,202 @@
+% The master file, Normal (PDFTeX) Version.
+
+% Very few changes should be needed here except title and author for instance. 
+% Make note the table of contents (very bottom of this file)
+% pulls in all the chapter files which is why this is the master file. It hides all % the technical mumbo jumbo from the actual writing too.
+
+%	For pandoc compiles, open and compile using the Main-Pandoc.tex file.
+
+
+% UNIVERSAL SETTINGS
+% document structure
+
+\documentclass[12pt,twoside,onecolumn,openright,extrafontsizes]{memoir}
+\usepackage[utf8x]{inputenc}
+
+% ebgaramond font package
+\usepackage[cmintegrals,cmbraces]{newtxmath}
+\usepackage{ebgaramond-maths}
+\usepackage[T1]{fontenc}
+
+% Predefined commands
+\newcommand*\NewPage{\newpage\thispagestyle{empty}\mbox{}}
+
+% PACKAGE DEFINITION
+% typographical packages
+\usepackage{microtype} % for micro-typographical adjustments
+\usepackage{setspace} % for line spacing
+\usepackage{lettrine} % for drop caps and awesome chapter beginnings
+	\renewcommand{\LettrineTextFont}{\normalfont}
+\usepackage[ttdefault=true]{AnonymousPro}
+		\makeatletter
+		\newcommand{\verbatimfontfamily}[1]{
+			\def\verbatim@font{\fontfamily{#1}\selectfont\tiny}}
+		\makeatother
+				\verbatimfontfamily{AnonymousPro}
+	
+\usepackage{titlesec} % for manipulation of chapter titles
+
+% for placeholder text
+\usepackage{lipsum} % to generate Lorem Ipsum
+
+% graphics package
+\usepackage{wrapfig}
+\usepackage{graphicx}
+
+% other
+\usepackage{calc}
+\usepackage{hologo}
+\usepackage[hidelinks]{hyperref}
+\usepackage{verbatim}
+\usepackage{wallpaper}
+
+
+% PHYSICAL DOCUMENT SETUP
+% media settings
+\setstocksize{8.5in}{5.675in}
+\settrimmedsize{8.5in}{5.5in}{*}
+\setbinding{0.175in}
+\setlrmarginsandblock{0.611in}{1.222in}{*}
+\setulmarginsandblock{0.722in}{1.545in}{*}
+\setlength{\parindent}{0.5em}
+
+% defining the title and the author
+\title{Rescue Rangers: The bad guys attack headquarters}
+\author{Megan Teepell}
+\newcommand{\press}{Rescue Rangers series prequel}
+
+% custom second title page
+
+\makeatletter
+\newcommand*\halftitlepage{\begingroup % Misericords, T&H p 153
+  \setlength\drop{0.1\textheight}
+  \begin{center}
+  \vspace*{\drop}
+  \rule{\textwidth}{0in}\par
+  {\Large\textsc\thetitle\par}
+  \rule{\textwidth}{0in}\par
+  \vfill
+  \end{center}
+\endgroup}
+\makeatother
+% custom title page
+
+\thispagestyle{empty}
+\makeatletter
+\newlength\drop
+\newcommand*\titleM{\begingroup % Misericords, T&H p 153
+  \setlength\drop{0.15\textheight}
+  \begin{center}
+  \vspace*{\drop}
+  \rule{\textwidth}{0in}\par
+  {\HUGE\textsc\thetitle\par}
+  \rule{\textwidth}{0in}\par
+  {\Large\textit{By \theauthor}\par}
+  \vfill
+  {\Large\scshape\press}
+  \end{center}
+\endgroup}
+\makeatother
+
+% chapter title manipulation
+% padding with zero
+\renewcommand*\thechapter{\ifnum\value{chapter}<10 0\fi\arabic{chapter}}
+% chapter title display
+\titleformat
+{\chapter}
+[display]
+{\normalfont\scshape\huge}
+{\HUGE\thechapter\centering}
+{0pt}
+{\vspace{18pt}\centering}[\vspace{42pt}]
+
+
+% typographical settings for the body text
+\setlength{\parskip}{0em}
+\linespread{1.04}
+
+% HEADER AND FOOTER MANIPULATION
+  % for normal pages
+  \nouppercaseheads
+  \headsep = 0.16in
+  \makepagestyle{mystyle} 
+  \setlength{\headwidth}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}
+  \makerunningwidth{mystyle}{\headwidth}
+  \makeevenhead{mystyle}{}{\textsf{\scriptsize\scshape\thetitle}}{}
+  \makeoddhead{mystyle}{}{\textsf{\scriptsize\scshape\leftmark}}{}
+  \makeevenfoot{mystyle}{}{\textsf{\scriptsize\thepage}}{}
+  \makeoddfoot{mystyle}{}{\textsf{\scriptsize\thepage}}{}
+  \makeatletter
+  \makepsmarks{mystyle}{%
+  \createmark{chapter}{left}{nonumber}{\@chapapp\ }{.\ }}
+  \makeatother
+  % for pages where chapters begin
+  \makepagestyle{plain}
+  \makerunningwidth{plain}{\headwidth}
+  \makeevenfoot{plain}{}{}{}
+  \makeoddfoot{plain}{}{}{}
+  \pagestyle{mystyle}
+% END HEADER AND FOOTER MANIPULATION
+
+% table of contents customisation
+
+\renewcommand\contentsname{\normalfont\scshape Contents}
+\renewcommand\cftchapterfont{\normalfont}
+\renewcommand{\cftchapterpagefont}{\normalfont}
+\renewcommand{\printtoctitle}{\centering\Huge}
+
+% layout check and fix
+\checkandfixthelayout
+\fixpdflayout
+
+% BEGIN THE DOCUMENT
+\begin{document}
+
+\pagestyle{empty}
+% the half title page
+\halftitlepage
+\cleardoublepage
+% the title page
+\titleM
+\clearpage
+% copyright page
+\noindent{\small{This novel is entirely a work of fiction. The names, characters and incidents portrayed in it are the product of the author's imagination. Any resemblance to actual persons, living or dead, or events or localities is entirely coincidental.\par\vfill\noindent Pre-Draft Edition\space\today\\
+		% ISBN\space\ISBN\\
+		\copyright\space\theauthor.   \par\vfill\noindent\theauthor\space asserts the moral right to be identified as the author of this work. This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\par }}
+
+\begin{center}
+ 	\centering
+	\includegraphics[width=0.25\linewidth=0.25]{license.png}
+\end{center}
+
+%\newpage
+{\tiny Disclaimer This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material. You are free to: Share — copy and redistribute the material in any medium or format Adapt — remix, transform, and build upon the material
+for any purpose, even commercially. The licensor cannot revoke these freedoms as long as you follow the license terms. Under the following terms: Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original. No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits. Notices: You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation. No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+}
+\clearpage
+
+% table of contents
+\clearpage
+\tableofcontents*
+
+% begin main matter
+\mainmatter
+\chapter{Beating the bad guys}
+\input{Rangers-ch1.tex}
+\chapter{Battle in the sky}
+\input{Rangers-ch2.tex}
+\chapter{Last chance for headquarters}
+\input{Rangers-ch3.tex}
+
+% \chapter{Jiminy the Demon}
+% \input{Susan-ch2.tex}
+
+\chapter{Legal Licence}
+\input{license.tex}
+
+% begin back matter
+
+\end{document}
+% END THE DOCUMENT
+
+
