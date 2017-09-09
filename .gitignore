@@ -1,0 +1,10 @@
+*.aux
+*.log
+*.out
+Main*.pdf
+Main*.epub
+Main*.mobi
+*.synctex.gz
+*.toc
+
+
