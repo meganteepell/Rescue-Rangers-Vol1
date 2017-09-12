@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.13(web2c) (format=latex 2013.5.31)  9 SEP 2017 01:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.13(web2c) (format=latex 2013.5.31)  9 SEP 2017 22:52
 entering extended mode
 **/storage/emulated/0/Documents/Rescue-Rangers-Vol1/Megans-Main-PDFTeX.tex
 (/storage/emulated/0/Documents/Rescue-Rangers-Vol1/Megans-Main-PDFTeX.tex
@@ -1197,7 +1197,7 @@ Package microtype Info: Character `textfouroldstyle ' is missing
 Package microtype Info: Character `textsevenoldstyle ' is missing
 (microtype)             in font `TS1/EBGaramond-OsF/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- <license.png, id=35, 88.33pt x 31.11626pt>
+ <license.png, id=19, 88.33pt x 31.11626pt>
 File: license.png Graphic file (type png)
 
 <use license.png>
@@ -1221,10 +1221,10 @@ l.176 \clearpage
 
  
 Here is how much of TeX's memory you used:
- 13395 strings out of 43499
- 203404 string characters out of 893906
+ 13386 strings out of 43499
+ 203322 string characters out of 893906
  460233 words of memory out of 1000000
- 16521 multiletter control sequences out of 15000+40000
+ 16516 multiletter control sequences out of 15000+40000
  30378 words of font info for 38 fonts, out of 300000 for 1000
  957 hyphenation exceptions out of 9000
  40i,10n,51p,1166b,346s stack positions out of 300i,50n,200p,100000b,4000s
